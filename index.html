@@ -17,11 +17,41 @@
     <!-- main Section -->
     <main>
         <section>
+            <!-- income & expenses -->
             <div class="grid grid-cols-2 gap-6">
                 <div>
-                    <img class="" src="images/calculate.jpg" alt="">
+                    <img class="w-3/4 mx-auto" src="images/calculate.jpg" alt="">
                 </div>
-                <div></div>
+                <div class="w-3/4 mx-auto bg-slate-100 text-black">
+                    <h3 class="text-3xl text-center mt-10">Income</h3>
+                    <div class="grid grid-rows-4 w-3/4 mx-auto">
+                        <div class="flex">
+                            <h4 class="">Income:</h4>
+                            <input id="income-value" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="10000">
+                        </div>
+                        <h3 class="text-3xl text-center mt-10 mb-10">Expenses</h3>
+                        <div class="flex">
+                            <h4>Food:</h4>
+                            <input id="food-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
+                        </div>
+                        <div class="flex">
+                            <h4>Rent:</h4>
+                            <input id="rent-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
+                        </div>
+                        <div class="flex">
+                            <h4>Clothes:</h4>
+                            <input id="clothes-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
+                        </div>
+                    </div>
+                    <!-- calculate balance-->
+                    <div class="grid grid-rows-1">
+                        <div class="text-center">
+                            <button id="calculate-button" class="bg-cyan-600 px-4 rounded p-2 text-center w-40 mx-auto text-white font-semibold mt-5">Calculate</button>
+                            <h3 class="text-2xl text-center mt-10">Total Expenses: <span></span>00</h3>
+                            <h3 class="text-2xl text-center mt-10">Balance: <span></span>00</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
