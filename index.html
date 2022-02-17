@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mashik Khoroch</title>
-    <!-- tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-</head>
-<body>
-    <!-- header Section -->
-    <header>
-        <h1 class="text-4xl text-center mt-16 mb-16 font-bold text-cyan-500">Mashik Khoroch</h1>
-    </header>
-    <!-- main Section -->
-    <main>
-        <section>
-            <!-- income & expenses -->
-            <div class="grid grid-cols-2 gap-6">
-                <div>
-                    <img class="w-3/4 mx-auto" src="images/calculate.jpg" alt="">
-                </div>
-                <div class="w-3/4 mx-auto bg-slate-100 text-black">
-                    <h3 class="text-3xl text-center mt-10">Income</h3>
-                    <div class="grid grid-rows-4 w-3/4 mx-auto">
-                        <div class="flex">
-                            <h4 class="">Income:</h4>
-                            <input id="income-value" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="10000">
-                        </div>
-                        <h3 class="text-3xl text-center mt-10 mb-10">Expenses</h3>
-                        <div class="flex">
-                            <h4>Food:</h4>
-                            <input id="food-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
-                        </div>
-                        <div class="flex">
-                            <h4>Rent:</h4>
-                            <input id="rent-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
-                        </div>
-                        <div class="flex">
-                            <h4>Clothes:</h4>
-                            <input id="clothes-cost" class="bg-slate-300 w-46 text-center ml-2 h-8" type="text" placeholder="00">
-                        </div>
-                    </div>
-                    <!-- calculate balance-->
-                    <div class="grid grid-rows-1">
-                        <div class="text-center">
-                            <button id="calculate-button" class="bg-cyan-600 px-4 rounded p-2 text-center w-40 mx-auto text-white font-semibold mt-5">Calculate</button>
-                            <h3 class="text-2xl text-center mt-10">Total Expenses: <span id="total-expenses">00</span></h3>
-                            <h3 class="text-2xl text-center mt-10">Balance: <span id="total-balance">00</span></h3>
-                        </div>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mashik khoroch</title>
+    <link rel="shortcut icon" href="./image/profits.png" type="image/x-icon" />
+    <!-- BootStrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="container min-vh-100 d-flex flex-column justify-content-center">
+      <header class="">
+        <div
+          class="d-flex flex-md-row flex-column justify-content-md-center align-items-center my-5"
+        >
+          <h1 class="m-0 px-2 fw-bolder" style="color: rgb(85, 87, 201)">
+            Mashik khoroch
+          </h1>
+          <img src="./images/profits.png" height="30px" width="30px" alt="" />
+        </div>
+      </header>
+      <main class="">
+        <div class="row g-5">
+          <div class="col-12 col-lg-8">
+            <img
+              src="./images/expenses.jpg"
+              class="w-100 h-100 rounded"
+              alt=""
+            />
+          </div>
+          <div
+            class="col-12 col-lg-4 rounded"
+            style="background-color: #f8f8f8"
+          >
+            <div
+              id="income"
+              class="d-flex flex-column justify-content-center fw-bold"
+            >
+              <h5 class="text-center p-3 fw-bolder">Income</h5>
+              <div class="d-flex justify-content-around mb-3">
+                <label for="income-text">Income : </label>
+                <input type="text" id="income-text" />
+              </div>
+              <h5 class="text-center p-3 fw-bolder">Expenses</h5>
+              <div class="d-flex justify-content-around mb-3">
+                <label for="food-text-text">Food : </label>
+                <input type="text" id="food-text" />
+              </div>
+              <div class="d-flex justify-content-around mb-3">
+                <label for="rent-text">Rent : </label>
+                <input type="text" id="rent-text" />
+              </div>
+              <div class="d-flex justify-content-around mb-3">
+                <label for="cloth-text">Cloth : </label>
+                <input type="text" id="cloth-text" />
+              </div>
+              <div class="mx-auto">
+                <button class="btn btn-primary bg-info mb-3" id="calculation">
+                  Calculation
+                </button>
+              </div>
+              <h5 class="text-center">
+                Total Expenses : <span id="total-expenses">0</span>
+              </h5>
+              <h5 class="text-center">Balance : <span id="balance">0</span></h5>
             </div>
-        </section>
-    </main>
-    <script src="js/app.js"></script>r
-</body>
+            <div>
+              <div id="saving">
+                <div
+                  class="d-flex justify-content-center align-items-center fw-bolder mb-3"
+                >
+                  <label for="save-text" class="px-2">Save : </label>
+                  <input id="save-text" style="width: 132px" type="text" />
+                  <span class="mx-3">%</span>
+                  <button class="btn btn-primary bg-info" id="save-button">
+                    Save
+                  </button>
+                </div>
+                <h5 class="text-center">
+                  Saving Amount : <span id="saving-amount">0</span>
+                </h5>
+                <h5 class="text-center mb-3">
+                  Remaining Balance: <span id="rest-balance">0</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- BootStrap CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- External JS -->
+    <script src="/js/index.js"></script>
+  </body>
 </html>
